@@ -1,0 +1,21 @@
+
+apply plugin: 'java'
+apply plugin: 'idea'
+
+sourceCompatibility = '1.8'
+targetCompatibility = '1.8'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'org.springframework:spring-core:4.2.0.RELEASE'
+    compile 'org.springframework:spring-context:4.2.0.RELEASE'
+    compile 'org.springframework:spring-webmvc:4.2.0.RELEASE'
+
+    compile 'org.apache.tomcat.embed:tomcat-embed-core:8.0.24'
+    compile 'org.apache.tomcat.embed:tomcat-embed-jasper:8.0.24'
+    compile 'org.apache.tomcat.embed:tomcat-embed-logging-juli:8.0.24'
+    compile 'javax.servlet.jsp.jstl:javax.servlet.jsp.jstl-api:1.2.1'
+}

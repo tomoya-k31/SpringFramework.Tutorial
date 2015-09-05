@@ -1,0 +1,4 @@
+includeFlat 'practice1'
+
+project(':practice1').projectDir = new File(settingsDir,  '../practice1')
+
