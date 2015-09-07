@@ -1,4 +1,5 @@
-includeFlat 'practice1'
+includeFlat 'practice1' ,'SpringBoot.Reference1'
 
 project(':practice1').projectDir = new File(settingsDir,  '../practice1')
+project(':SpringBoot.Reference1').projectDir = new File(settingsDir,  '../SpringBoot.Reference1')
 
