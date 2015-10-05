@@ -7,12 +7,18 @@ buildscript {
     dependencies {
         classpath "org.springframework.boot:spring-boot-gradle-plugin:1.2.5.RELEASE"
         classpath 'org.springframework:springloaded:1.2.0.RELEASE'
+        // optional,providedを使うプラグイン (maven:plugins-release)
+        classpath 'com.netflix.nebula:gradle-extra-configurations-plugin:2.2.+'
     }
 }
 apply plugin: 'java'
 apply plugin: 'idea'
 apply plugin: 'spring-boot'
+apply plugin: 'nebula.provided-base'
 
+
+// Hot Swapping 'Spring Loaded' Setting for IDEA
+// http://docs.spring.io/spring-boot/docs/current/reference/html/howto-hotswapping.html
 idea {
     module {
         inheritOutputDirs = false
@@ -30,6 +36,10 @@ repositories {
     maven { url "http://repo.spring.io/milestone" }
 }
 dependencies {
-    compile("org.springframework.boot:spring-boot-starter-web")
-    testCompile("org.springframework.boot:spring-boot-starter-test")
+    compile "org.springframework.boot:spring-boot-starter-data-jpa"
+    compile "com.h2database:h2"
+    compile 'org.bgee.log4jdbc-log4j2:log4jdbc-log4j2-jdbc4:1.16'
+
+    provided "org.projectlombok:lombok:1.16.6"
+    testCompile "org.springframework.boot:spring-boot-starter-test"
 }

@@ -1,5 +1,37 @@
-includeFlat 'practice1' ,'SpringBoot.Reference1'
+includeFlat 'practice1'
+includeFlat 'SpringBoot.Reference1'
+
+// Command Line
+includeFlat 'SpringBoot.Reference2'
+includeFlat 'SpringBoot.Reference2.1'
+includeFlat 'SpringBoot.Reference2.2'
+includeFlat 'SpringBoot.Reference2.3'
+includeFlat 'SpringBoot.Reference2.4'
+// Web
+includeFlat 'SpringBoot.Reference3.1'
+includeFlat 'SpringBoot.Reference3.2'
+
+
+// Site
+includeFlat 'SpringXml.Site'
+includeFlat 'SpringCode.Site'
+
 
 project(':practice1').projectDir = new File(settingsDir,  '../practice1')
 project(':SpringBoot.Reference1').projectDir = new File(settingsDir,  '../SpringBoot.Reference1')
 
+// Command Line
+project(':SpringBoot.Reference2').projectDir = new File(settingsDir,  '../SpringBoot.Reference2')
+project(':SpringBoot.Reference2.1').projectDir = new File(settingsDir,  '../SpringBoot.Reference2.1')
+project(':SpringBoot.Reference2.2').projectDir = new File(settingsDir,  '../SpringBoot.Reference2.2')
+project(':SpringBoot.Reference2.3').projectDir = new File(settingsDir,  '../SpringBoot.Reference2.3')
+project(':SpringBoot.Reference2.4').projectDir = new File(settingsDir,  '../SpringBoot.Reference2.4')
+// Web
+project(':SpringBoot.Reference3.1').projectDir = new File(settingsDir,  '../SpringBoot.Reference3.1')
+project(':SpringBoot.Reference3.2').projectDir = new File(settingsDir,  '../SpringBoot.Reference3.2')
+
+
+
+// Site
+project(':SpringXml.Site').projectDir = new File(settingsDir,  '../SpringXml.Site')
+project(':SpringCode.Site').projectDir = new File(settingsDir,  '../SpringCode.Site')

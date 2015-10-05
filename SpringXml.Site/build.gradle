@@ -1,0 +1,49 @@
+buildscript {
+    repositories {
+        jcenter()
+        maven { url "http://repo.spring.io/snapshot" }
+        maven { url "http://repo.spring.io/milestone" }
+    }
+    dependencies {
+        classpath 'org.springframework:springloaded:1.2.4.RELEASE'
+        // optional,providedを使うプラグイン (maven:plugins-release)
+        classpath 'com.netflix.nebula:gradle-extra-configurations-plugin:2.2.+'
+    }
+}
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'nebula.provided-base'
+
+ext {
+    tomcatVersion = '8.0.26'
+    springVersion = '4.2.0.RELEASE'
+}
+
+// Hot Swapping 'Spring Loaded' Setting for IDEA
+// IDEAのMake project automaticallyをチェック
+idea {
+    module {
+        inheritOutputDirs = false
+        outputDir = file("$buildDir/classes/main/")
+    }
+}
+
+repositories {
+    jcenter()
+    maven { url "http://repo.spring.io/snapshot" }
+    maven { url "http://repo.spring.io/milestone" }
+}
+dependencies {
+    compile "org.apache.tomcat.embed:tomcat-embed-core:$tomcatVersion"
+    compile "org.apache.tomcat:tomcat-jasper:$tomcatVersion"
+
+    compile "org.springframework:spring-core:$springVersion"
+    compile "org.springframework:spring-context:$springVersion"
+    compile "org.springframework:spring-webmvc:$springVersion"
+    compile "org.springframework:spring-web:$springVersion"
+
+    compile "mysql:mysql-connector-java:5.1.36"
+
+    provided "org.projectlombok:lombok:1.16.6"
+
+}

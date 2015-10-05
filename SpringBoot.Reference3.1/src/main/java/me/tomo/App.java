@@ -1,19 +1,17 @@
-package me.tomoya;
+package me.tomo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
 
 /**
- * Created by usr0200379 on 15/09/08.
+ * Created by usr0200379 on 15/09/21.
  */
-@Configuration
 @EnableAutoConfiguration
 @ComponentScan
-public class MyApplication {
+public class App {
 
     public static void main(String[] args) {
-        SpringApplication.run(MyApplication.class, args);
+        SpringApplication.run(App.class, args);
     }
 }
